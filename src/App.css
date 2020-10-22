@@ -1,3 +1,10 @@
+h1,
+h2,
+h4,
+h5 {
+  margin: 0;
+}
+
 main {
   min-height: 100%;
   color: #fff;
@@ -39,4 +46,64 @@ button {
 .d-b-active {
   background: rgba(255, 255, 255, 0.25);
   border-left: 2px solid #FFFFFF;
+}
+
+.today-forecast-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.today-forecast-section .left h1 {
+  font-family: Work Sans;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 75px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.today-forecast-section .left h5 {
+  font-family: Work Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  margin-bottom: 35px;  
+}
+
+.today-forecast-section .right h1 {
+  font-family: Work Sans;
+  font-size: 144px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 169px;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+.today-forecast-section .right h4 {
+  font-family: Work Sans;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: 0.05em;
+  margin-bottom: 23px;
+  text-align: right;
+}
+
+.today-forecast-section .right h4 span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.today-forecast-section .right h5 {
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0em;
 }
