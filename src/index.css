@@ -5,4 +5,5 @@ body {
     sans-serif;
   background: url('./assets/bg.png') center no-repeat;
   background-size: cover;
+  height: 100vh;
 }

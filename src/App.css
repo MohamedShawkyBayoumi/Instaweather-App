@@ -1,4 +1,42 @@
 main {
-  min-height: 100vh;
+  min-height: 100%;
   color: #fff;
+  padding: 41px 0 105px 0;
+}
+
+.container {
+  padding: 0 144px;
+}
+
+header {
+  margin-bottom: 171px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.degrees-buttons {
+
+}
+
+button {
+  padding: 10px 30px;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+.d-b-active {
+  background: rgba(255, 255, 255, 0.25);
+  border-left: 2px solid #FFFFFF;
 }
