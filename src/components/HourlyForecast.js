@@ -11,8 +11,8 @@ const HourlyForecast = () => {
                         <button>Daily</button>
                     </div>
                     <div className="hourly-forecast">
-                        {[1, 1, 1, 1, 1, 1, 1, 1, 1, ].map(() => (
-                            <div className="hourly-forecast-card">
+                        {[1, 1, 1, 1, 1, 1, 1, 1, 1, ].map((card, index) => (
+                            <div key={index} className="hourly-forecast-card">
                                 <h6>Now</h6>
                                 <CloudyIcon />
                                 <h5>81°</h5>
