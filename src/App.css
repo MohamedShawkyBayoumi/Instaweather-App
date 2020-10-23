@@ -1,7 +1,8 @@
 h1,
 h2,
 h4,
-h5 {
+h5,
+h6 {
   margin: 0;
 }
 
@@ -16,7 +17,7 @@ main {
 }
 
 header {
-  margin-bottom: 171px;
+  /* margin-bottom: 171px; */
 }
 
 .header-content {
@@ -106,4 +107,57 @@ button {
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0em;
+}
+
+.section-top-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 37px;
+}
+
+.section-top-bar button {
+  padding: 15px 0;
+  margin-right: 59px;
+}
+
+.hourly-button-active {
+  border-bottom: 3px solid #FFFFFF;
+}
+
+.hourly-forecast {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hourly-forecast-card {
+  margin-right: 70px;
+}
+
+.hourly-forecast-card:last-child {
+  margin-right: 0;
+}
+
+.hourly-forecast-card h6 {
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.hourly-forecast-card svg {
+  width: 66px;
+}
+
+.hourly-forecast-card h5 {
+  font-family: Work Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
