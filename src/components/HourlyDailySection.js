@@ -14,7 +14,7 @@ const HourlyDailySection = ({data, unitMeasure}) => {
                             `${new Date(time * 1000).getHours()}:0${new Date(time * 1000).getMinutes()}`
                         }
                     </h6>
-                    <CloudyIcon />
+                    <CloudyIcon className="cloud-icon" />
                     {
                         temperatureLow ? (
                             <h5>{unitMeasure === 1 ? `${toCelsius(temperatureLow)}°/${Math.round(temperatureHigh)}°`: `${Math.round(temperatureLow)}F/${Math.round(temperatureHigh)}F`}</h5>

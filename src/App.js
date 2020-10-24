@@ -25,7 +25,7 @@ function App() {
       let res = await axios.get(`${API}/${latitude},${longitude}`)
       setData(res.data);
       let resReverseGeo = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
-      setCityName(`${resReverseGeo.data.city}, ${resReverseGeo.data.countryName}`);
+      setCityName(resReverseGeo.data.city);
     } catch (error) {
       console.log(error)
     }

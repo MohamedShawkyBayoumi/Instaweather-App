@@ -14,7 +14,7 @@ const TodayForecast = ({ currently, daily, cityName, unitMeasure }) => {
                             <h5>
                                 {`${weekDays[new Date().getDay()]} ${new Date().getDate()}, ${new Date().getFullYear()}`}
                             </h5>
-                            <CloudyIcon />
+                            <CloudyIcon className="cloud-icon" />
                             <h5>
                                 {currently.summary}
                             </h5>

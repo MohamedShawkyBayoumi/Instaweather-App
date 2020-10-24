@@ -5,7 +5,7 @@ main {
 }
 
 header {
-  /* margin-bottom: 171px; */
+  margin-bottom: 171px;
 }
 
 .header-content,
@@ -24,6 +24,10 @@ button,
 .today-forecast-section .right h5,
 .hourly-forecast-card h6 {
   font-size: 24px;
+}
+
+.today-forecast-section {
+  margin-bottom: 68px;
 }
 
 button {
@@ -172,4 +176,80 @@ button,
   font-weight: 400;
   line-height: 42px;
 
+}
+
+@media(max-width: 1024px){
+  header,
+  .today-forecast-section,
+  .hourly-forecast-section {
+    padding: 0 30px;
+  }
+}
+
+@media(max-width: 768px){
+  header,
+  .today-forecast-section,
+  .hourly-forecast-section {
+    padding: 0 20px;
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    width: 180px;
+  }
+  
+  .today-forecast-section .left h1,
+  .today-forecast-section .right h4 {
+    font-size: 30px;
+  }
+  
+  .today-forecast-section .right h1 {
+    font-size: 50px;
+  }
+
+  .today-forecast-section .right h5 {
+    font-size: 18px;
+  }
+  
+  .today-forecast-section {
+    margin-bottom: 10px;
+  }
+
+  .cloud-icon {
+    width: 70px;
+  }
+  
+  .hourly-forecast-card svg {
+    width: 50px;
+  }
+
+  .hourly-forecast-card h5 {
+    font-size: 26px;
+  }
+
+  .hourly-forecast-card h6 {
+    font-size: 20px;
+  }
+
+  .hourly-forecast {
+    padding-bottom: 18px;
+  }
+
+  .section-top-bar {
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  .section-top-bar button {
+    padding: 10px 0;
+    font-size: 18px;
+    margin-right: 38px;
+  }
 }

@@ -7,7 +7,7 @@ const Header = ({ unitsMeasurement, setUnitMeasure, unitMeasure }) => {
             <div className="container">
                 <div className="header-content">
                     <a href="/">
-                        <Logo />
+                        <Logo className="logo" />
                     </a>
                     <div className="degrees-buttons">
                         {unitsMeasurement && unitsMeasurement.map(({unit, id}, index) => (
