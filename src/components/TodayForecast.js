@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactComponent as CloudyIcon } from '../assets/cloudy.svg';
 import { weekDays, toCelsius } from '../utils';
 
-const TodayForecast = ({ currently, daily, unitMeasure }) => {
+const TodayForecast = ({ currently, daily, cityName, unitMeasure }) => {
 
     return (
         <section>
@@ -10,7 +10,7 @@ const TodayForecast = ({ currently, daily, unitMeasure }) => {
                 {currently && Object.keys(currently).length > 0 && (
                     <div className="today-forecast-section">
                         <div className="left">
-                            <h1>New Cairo</h1>
+                            <h1>{cityName}</h1>
                             <h5>
                                 {`${weekDays[new Date().getDay()]} ${new Date().getDate()}, ${new Date().getFullYear()}`}
                             </h5>

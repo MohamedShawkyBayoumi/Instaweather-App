@@ -6,11 +6,11 @@ const HourlyDailySection = ({data, unitMeasure}) => {
     console.log('data', data)
     return (
         <div className="hourly-forecast">
-            {data && data.data.length > 0 && data.data.map(({ temperature, time, temperatureLow, temperatureHigh }, index) => (
+            {data && data.data.length > 0 && data.data.map(({ temperature, time, temperatureLow, temperatureHigh, icon }, index) => (
                 <div key={index} className="hourly-forecast-card">
                     <h6>
                         {temperatureLow ? 
-                            `${weekDays[new Date().getDay()]} ${new Date().getDate()}, ${new Date().getFullYear()}`
+                            `${weekDays[new Date(time * 1000).getDay()]} ${new Date(time * 1000).getDate()}, ${new Date().getFullYear()}`
                             :
                             `${new Date(time * 1000).getHours()}:0${new Date(time * 1000).getMinutes()}`
                         }

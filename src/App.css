@@ -20,14 +20,22 @@ header {
   /* margin-bottom: 171px; */
 }
 
-.header-content {
+.header-content,
+.today-forecast-section,
+.hourly-forecast-card {
   display: flex;
   align-items: center;
+}
+
+.header-content,
+.today-forecast-section {
   justify-content: space-between;
 }
 
-.degrees-buttons {
-
+button,
+.today-forecast-section .right h5,
+.hourly-forecast-card h6 {
+  font-size: 24px;
 }
 
 button {
@@ -35,12 +43,9 @@ button {
   cursor: pointer;
   color: #fff;
   background: transparent;
-  font-family: Work Sans;
-  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
-  letter-spacing: 0.05em;
   border: none;
 }
 
@@ -49,29 +54,34 @@ button {
   border-left: 2px solid #FFFFFF;
 }
 
-.today-forecast-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+button,
+.today-forecast-section .left h1,
+.today-forecast-section .left h5,
+.today-forecast-section .right h1,
+.today-forecast-section .right h4,
+.today-forecast-section .right h5,
+.hourly-forecast-card h5,
+.hourly-forecast-card h6 {
+  font-family: Work Sans;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.today-forecast-section .left h1,
+.today-forecast-section .left h5,
+.today-forecast-section .right h1 {
+  font-weight: 700;
 }
 
 .today-forecast-section .left h1 {
-  font-family: Work Sans;
   font-size: 64px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 75px;
-  letter-spacing: 0.05em;
   margin-bottom: 10px;
 }
 
 .today-forecast-section .left h5 {
-  font-family: Work Sans;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 23px;
-  letter-spacing: 0.05em;
   margin-bottom: 35px;
 }
 
@@ -80,22 +90,15 @@ button {
 }
 
 .today-forecast-section .right h1 {
-  font-family: Work Sans;
   font-size: 144px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 169px;
-  letter-spacing: 0.05em;
   text-align: right;
 }
 
 .today-forecast-section .right h4 {
-  font-family: Work Sans;
   font-size: 48px;
-  font-style: normal;
   font-weight: 400;
   line-height: 56px;
-  letter-spacing: 0.05em;
   margin-bottom: 23px;
   text-align: right;
 }
@@ -105,9 +108,6 @@ button {
 }
 
 .today-forecast-section .right h5 {
-  font-family: Work Sans;
-  font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0em;
@@ -136,45 +136,44 @@ button {
   overflow-x: auto;
 }
 
-/* width */
+/* scroll height */
 .hourly-forecast::-webkit-scrollbar {
   height: 3px;
 }
 
-/* Track */
+/* scroll Track */
 .hourly-forecast::-webkit-scrollbar-track {
   background: transparent;
 }
  
-/* Handle */
+/* scroll Handle */
 .hourly-forecast::-webkit-scrollbar-thumb {
   background: #fff;
 }
 
-/* Handle on hover */
+/* scroll Handle on hover */
 .hourly-forecast::-webkit-scrollbar-thumb:hover {
   background: #ccc;
 }
 
 .hourly-forecast-card {
   margin-right: 70px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .hourly-forecast-card:last-child {
   margin-right: 0;
 }
 
+.hourly-forecast-card h6,
+.hourly-forecast-card h5 {
+  text-align: center;
+}
+
 .hourly-forecast-card h6 {
-  font-family: Work Sans;
-  font-size: 24px;
-  font-style: normal;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0em;
-  text-align: center;
 }
 
 .hourly-forecast-card svg {
@@ -182,11 +181,8 @@ button {
 }
 
 .hourly-forecast-card h5 {
-  font-family: Work Sans;
   font-size: 36px;
-  font-style: normal;
   font-weight: 400;
   line-height: 42px;
-  letter-spacing: 0.05em;
-  text-align: center;
+
 }

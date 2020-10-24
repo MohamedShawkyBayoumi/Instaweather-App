@@ -8,6 +8,7 @@ import { API } from './services';
 
 function App() {
   const [data, setData] = useState({}),
+  [cityName, setCityName] = useState(''),
   [unitMeasure, setUnitMeasure] = useState(1),
   [unitsMeasurement] = useState([
     {
@@ -23,6 +24,9 @@ function App() {
     try {
       let res = await axios.get(`${API}/${latitude},${longitude}`)
       setData(res.data);
+      let resReverseGeo = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+      console.log('resReverseGeo', resReverseGeo)
+      setCityName(`${resReverseGeo.data.city}, ${resReverseGeo.data.countryName}`);
     } catch (error) {
       console.log(error)
     }
@@ -53,6 +57,7 @@ function App() {
         <TodayForecast
           {...data}
           unitMeasure={unitMeasure}
+          cityName={cityName}
         />
         <HourlyForecast
           {...data}
