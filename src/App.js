@@ -8,6 +8,17 @@ import { API } from './services';
 
 function App() {
   const [data, setData] = useState({}),
+  [unitMeasure, setUnitMeasure] = useState(1),
+  [unitsMeasurement] = useState([
+    {
+      id: 1,
+      unit: 'C'
+    },
+    {
+      id: 2,
+      unit: 'F'
+    },
+  ]),
   fetchWeatherData = async (latitude, longitude) => {
     try {
       let res = await axios.get(`${API}/${latitude},${longitude}`)
@@ -23,7 +34,7 @@ function App() {
   },
   failureCallback = (error) => {
     console.log(error)
-  }
+  };
 
   useEffect(() => {
     // GET user Locatiton
@@ -34,9 +45,19 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Header />
-        <TodayForecast {...data} />
-        <HourlyForecast {...data} />
+        <Header
+          unitsMeasurement={unitsMeasurement}
+          setUnitMeasure={setUnitMeasure}
+          unitMeasure={unitMeasure}
+        />
+        <TodayForecast
+          {...data}
+          unitMeasure={unitMeasure}
+        />
+        <HourlyForecast
+          {...data}
+          unitMeasure={unitMeasure}
+        />
       </main>
     </div>
   );

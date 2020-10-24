@@ -1,8 +1,9 @@
 import React from 'react'
 import { ReactComponent as CloudyIcon } from '../assets/cloudy.svg';
+import { weekDays, toCelsius } from '../utils';
 
-const TodayForecast = ({ currently }) => {
-    let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const TodayForecast = ({ currently, daily, unitMeasure }) => {
+
     return (
         <section>
             <div className="container">
@@ -15,13 +16,25 @@ const TodayForecast = ({ currently }) => {
                             </h5>
                             <CloudyIcon />
                             <h5>
-                                Cloudy
+                                {currently.summary}
                             </h5>
                         </div>
                         <div className="right">
-                            <h1>{currently.temperature}°</h1>
-                            <h4>81° / <span>63°</span></h4>
-                            <h5>{currently.summary}</h5>
+                            <h1>{unitMeasure === 1 ? `${toCelsius(currently.temperature)}°`: `${Math.round(currently.temperature)}F`}</h1>
+                            {daily && daily.data.length > 0 && (
+                                <>
+                                    {unitMeasure === 1 ? (
+                                        <h4>
+                                            {toCelsius(daily.data[0].temperatureHigh)}° / 
+                                            <span>{toCelsius(daily.data[0].temperatureLow)}°</span>
+                                        </h4>
+                                    ) : (
+                                        <h4>{Math.round(daily.data[0].temperatureHigh)}F / <span>{Math.round(daily.data[0].temperatureLow)}F</span></h4>
+                                    )}
+                                
+                                    <h5>{daily.data[0].summary}</h5>
+                                </>
+                            )}
                         </div>
                     </div>
                 )}

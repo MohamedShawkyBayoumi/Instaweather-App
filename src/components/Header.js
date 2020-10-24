@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as Logo } from '../assets/logo.svg';
 
-const Header = () => {
+const Header = ({ unitsMeasurement, setUnitMeasure, unitMeasure }) => {
     return (
         <header>
             <div className="container">
@@ -10,8 +10,15 @@ const Header = () => {
                         <Logo />
                     </a>
                     <div className="degrees-buttons">
-                        <button>C</button>
-                        <button className="d-b-active">F</button>
+                        {unitsMeasurement && unitsMeasurement.map(({unit, id}, index) => (
+                            <button
+                                key={index}
+                                className={unitMeasure == id ? 'd-b-active': ''}
+                                onClick={() => setUnitMeasure(id)}
+                            >
+                                {unit}
+                            </button>
+                        ))}
                     </div>
                 </div>
             </div>

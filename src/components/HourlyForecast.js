@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as CloudyIcon } from '../assets/cloudy.svg';
+import HourlyDailySection from './HourlyDailySection';
 
-const HourlyForecast = ({ hourly }) => {
+const HourlyForecast = ({ hourly, daily, unitMeasure }) => {
+    const [types] = useState([
+            {
+                id: 1,
+                label: 'Hourly'
+            },
+            {
+                id: 2,
+                label: 'Daily'
+            },
+        ]),
+        [typeId, setTypeId] = useState(1)
     return (
         <section>
             <div className="container">
                 <div className="hourly-forecast-section">
                     <div className="section-top-bar">
-                        <button className="hourly-button-active">Hourly</button>
-                        <button>Daily</button>
+                        {types.map(({ id, label }, index) => (
+                            <button
+                                key={index}
+                                className={typeId === id ? 'hourly-button-active' : ''}
+                                onClick={() => setTypeId(id)}
+                            >
+                                {label}
+                            </button>
+                        ))}
                     </div>
-                    <div className="hourly-forecast">
+                    <HourlyDailySection 
+                        data={typeId === 1 ? hourly : daily}
+                        unitMeasure={unitMeasure}
+                    />
+                    {/* <div className="hourly-forecast">
                         {hourly && hourly.data.length > 0 && hourly.data.map(({ temperature, time }, index) => (
                             <div key={index} className="hourly-forecast-card">
                                 <h6>
@@ -20,7 +43,7 @@ const HourlyForecast = ({ hourly }) => {
                                 <h5>{temperature}°</h5>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
