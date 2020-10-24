@@ -72,7 +72,7 @@ button {
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0.05em;
-  margin-bottom: 35px;  
+  margin-bottom: 35px;
 }
 
 .today-forecast-section .right h1 {
@@ -107,6 +107,7 @@ button {
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0em;
+  text-align: right;
 }
 
 .section-top-bar {
@@ -128,10 +129,34 @@ button {
   justify-content: center;
   padding-bottom: 35px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  overflow-x: auto;
+}
+
+/* width */
+.hourly-forecast::-webkit-scrollbar {
+  height: 3px;
+}
+
+/* Track */
+.hourly-forecast::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* Handle */
+.hourly-forecast::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+/* Handle on hover */
+.hourly-forecast::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
 }
 
 .hourly-forecast-card {
   margin-right: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hourly-forecast-card:last-child {

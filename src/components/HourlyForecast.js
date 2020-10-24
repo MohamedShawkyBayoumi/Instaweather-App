@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as CloudyIcon } from '../assets/cloudy.svg';
 
-const HourlyForecast = () => {
+const HourlyForecast = ({ hourly }) => {
     return (
         <section>
             <div className="container">
@@ -11,11 +11,13 @@ const HourlyForecast = () => {
                         <button>Daily</button>
                     </div>
                     <div className="hourly-forecast">
-                        {[1, 1, 1, 1, 1, 1, 1, 1, 1, ].map((card, index) => (
+                        {hourly && hourly.data.length > 0 && hourly.data.map(({ temperature, time }, index) => (
                             <div key={index} className="hourly-forecast-card">
-                                <h6>Now</h6>
+                                <h6>
+                                    {`${new Date(time * 1000).getHours()}:0${new Date(time * 1000).getMinutes()}`}
+                                </h6>
                                 <CloudyIcon />
-                                <h5>81°</h5>
+                                <h5>{temperature}°</h5>
                             </div>
                         ))}
                     </div>

@@ -35,8 +35,8 @@ function App() {
     <div className="App">
       <main>
         <Header />
-        <TodayForecast />
-        <HourlyForecast />
+        <TodayForecast {...data} />
+        <HourlyForecast {...data} />
       </main>
     </div>
   );
