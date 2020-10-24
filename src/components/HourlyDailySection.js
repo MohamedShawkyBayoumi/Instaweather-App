@@ -3,7 +3,6 @@ import { ReactComponent as CloudyIcon } from '../assets/cloudy.svg';
 import { toCelsius, weekDays } from '../utils';
 
 const HourlyDailySection = ({data, unitMeasure}) => {
-    console.log('data', data)
     return (
         <div className="hourly-forecast">
             {data && data.data.length > 0 && data.data.map(({ temperature, time, temperatureLow, temperatureHigh, icon }, index) => (

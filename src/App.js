@@ -25,7 +25,6 @@ function App() {
       let res = await axios.get(`${API}/${latitude},${longitude}`)
       setData(res.data);
       let resReverseGeo = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
-      console.log('resReverseGeo', resReverseGeo)
       setCityName(`${resReverseGeo.data.city}, ${resReverseGeo.data.countryName}`);
     } catch (error) {
       console.log(error)
@@ -33,7 +32,6 @@ function App() {
   },
   successCallback = (position) => {
     const { latitude, longitude } = position.coords;
-    console.log(latitude, longitude)
     fetchWeatherData(latitude, longitude);
   },
   failureCallback = (error) => {
@@ -45,7 +43,6 @@ function App() {
     window.navigator.geolocation.getCurrentPosition(successCallback, failureCallback);
     
   }, []);
-  console.log('data', data)
   return (
     <div className="App">
       <main>
